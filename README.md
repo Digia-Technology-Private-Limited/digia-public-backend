@@ -9,10 +9,14 @@ Click Generate New Private Key, then confirm by clicking Generate Key.
 Set the JSON as a value to FIREBASE_ADMIN_CREDENTIALS in environment file
 
 
-To build for prod
+To build run
 
-`docker build --build-arg env="prod" .`
+`docker build .`
 
-To build for dev
+To run for prod
 
-`docker build --build-arg env="dev" .`
+`docker run -e env='prod' $IMAGE_ID`
+
+To run for dev
+
+`docker run -e env='dev' $IMAGE_ID`

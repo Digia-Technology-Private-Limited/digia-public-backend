@@ -1,9 +1,5 @@
 # Use an official Node.js runtime as the base image
-FROM public.ecr.aws/k2y9b2n4/digia-backend:1.0.0
-
-ARG env
-
-ENV env=${env}
+FROM public.ecr.aws/digia/digia-backend:1.1.0
 
 WORKDIR /app
 
@@ -13,4 +9,4 @@ COPY /configs ./dist/configs
 EXPOSE 3000
 
 # Start the Node.js application
-CMD npm run start:${env}
+CMD npm run start:$env
